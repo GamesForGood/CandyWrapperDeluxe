@@ -6,7 +6,8 @@ var NodeArea2D
 var NodeAudio
 var NodeAnim
 
-var SceneExplo = load("res://Scene/Explosion.tscn")
+var PLAYER_EXPLOSION = load("res://Scene/Explosion.tscn")
+var GREEN_ENEMY_EXPLOSION = load("res://Scene/ExplosionGreenEnemy.tscn")
 
 var HUD
 var read = []
@@ -108,14 +109,13 @@ func _physics_process(delta):
 
 
 
-func Explode(arg : Vector2):
-	var xpl = SceneExplo.instance()
-	xpl.position = arg
-	NodeScene.add_child(xpl)
+func Explode(arg : Vector2, explosionType):
+	explosionType.position = arg
+	NodeScene.add_child(explosionType)
 
 func Die():
 	queue_free()
-	Explode(position)
+	Explode(position, PLAYER_EXPLOSION.instance())
 	global.Game.Lose()
 
 func Overlap():
@@ -136,7 +136,7 @@ func Overlap():
 					jump = false
 					vel.y = -jumpSpd * 0.6
 				par.queue_free()
-				Explode(par.position)
+				Explode(par.position, GREEN_ENEMY_EXPLOSION.instance())
 				NodeScene.check = true
 				print("Goober destroyed")
 				hit = true
