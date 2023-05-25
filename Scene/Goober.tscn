@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Script/Goober.gd" type="Script" id=1]
-[ext_resource path="res://Image/Goober.png" type="Texture" id=2]
+[ext_resource path="res://Image/Gooberv2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3, 3 )
@@ -35,6 +35,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -1 )
 texture = ExtResource( 2 )
 hframes = 3
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
