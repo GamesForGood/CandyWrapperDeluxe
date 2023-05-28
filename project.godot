@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "Goober",
 "language": "GDScript",
 "path": "res://Script/Goober.gd"
+}, {
+"base": "Reference",
+"class": "GutHookScript",
+"language": "GDScript",
+"path": "res://addons/gut/hook_script.gd"
+}, {
+"base": "Node",
+"class": "GutTest",
+"language": "GDScript",
+"path": "res://addons/gut/test.gd"
 } ]
 _global_script_class_icons={
-"Goober": ""
+"Goober": "",
+"GutHookScript": "",
+"GutTest": ""
 }
 
 [application]
@@ -39,6 +51,10 @@ window/size/test_height=576
 window/dpi/allow_hidpi=true
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/gut/plugin.cfg" )
 
 [importer_defaults]
 
