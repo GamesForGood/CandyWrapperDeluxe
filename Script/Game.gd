@@ -38,11 +38,11 @@ func _ready():
 
 func _process(delta):
 	# quit the game
-	if btn.p("ui_cancel"):
+	if btn.just_pressed("ui_cancel"):
 		get_tree().quit()
 	
 	if global.level == 0:
-		if btn.p("ui_select"):
+		if btn.just_pressed("ui_select"):
 			global.level += 1
 			DoChange()
 	if global.level == 21:

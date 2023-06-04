@@ -1,4 +1,5 @@
 extends "res://Script/BaseKine.gd"
+class_name Player
 
 var NodeScene
 var NodeSprite
@@ -61,17 +62,17 @@ func _physics_process(delta):
 	vel.y = clamp(vel.y, -termVel, termVel)
 	
 	# horizontal input
-	var btnx = btn.d("right") - btn.d("left")
+	var btnx = btn.pressed("right") - btn.pressed("left")
 	vel.x = btnx * spd
 	
 	# jump
 	if onFloor:
-		if btn.p("jump"):
+		if btn.just_pressed("jump"):
 			jump = true
 			vel.y = -jumpSpd
 			NodeAudio.play()
 	elif jump:
-		if !btn.d("jump") and vel.y < jumpSpd / -3:
+		if !btn.pressed("jump") and vel.y < jumpSpd / -3:
 			jump = false
 			vel.y = jumpSpd / -3
 	
@@ -88,7 +89,7 @@ func _physics_process(delta):
 	
 	# sprite flip
 	if btnx !=0:
-		NodeSprite.flip_h = btn.d("left")
+		NodeSprite.flip_h = btn.pressed("left")
 	
 	# animation
 	if onFloor:
@@ -129,7 +130,7 @@ func Overlap():
 			if onFloor:
 				Die()
 			else:
-				if btn.d("jump"):
+				if btn.pressed("jump"):
 					jump = true
 					vel.y = -jumpSpd
 				else:
