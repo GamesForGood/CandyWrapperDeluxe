@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "GutTest",
 "language": "GDScript",
 "path": "res://addons/gut/test.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Script/Player.gd"
 } ]
 _global_script_class_icons={
 "Goober": "",
 "GutHookScript": "",
-"GutTest": ""
+"GutTest": "",
+"Player": ""
 }
 
 [application]

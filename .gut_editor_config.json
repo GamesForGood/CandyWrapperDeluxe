@@ -20,7 +20,7 @@
  "post_run_script": "",
  "pre_run_script": "",
  "prefix": "test_",
- "selected": null,
+ "selected": "test_Player.gd",
  "should_exit": false,
  "should_exit_on_success": false,
  "should_maximize": false,
@@ -37,7 +37,7 @@
   "font_size": 30,
   "hide_result_tree": false,
   "hide_output_text": false,
-  "hide_settings": false,
+  "hide_settings": true,
   "use_colors": false
  }
 }
