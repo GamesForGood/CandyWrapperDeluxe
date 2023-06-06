@@ -6,8 +6,8 @@ Play in your browser at: [harmonyhoney.itch.io/candy](https://harmonyhoney.itch.
 
 # Build
 We are using:
-- Godot 3.5.2 mono
-- GUT (for unit/integration testing)
+- [Godot 3.5.2 mono](https://godotengine.org/download/3.x/windows/) 
+- [GUT (for unit/integration testing)](https://github.com/bitwes/Gut) 
 
 ## License
 GNU GPLv3
