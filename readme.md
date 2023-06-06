@@ -4,6 +4,11 @@ Candy Wrapper is a 2D Pixel Art Platformer Arcade Game!
 
 Play in your browser at: [harmonyhoney.itch.io/candy](https://harmonyhoney.itch.io/candy)
 
+# Build
+We are using:
+- Godot 3.5.2 mono
+- GUT (for unit/integration testing)
+
 ## License
 GNU GPLv3
 
