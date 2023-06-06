@@ -10,15 +10,8 @@ jobs:
   run-tests:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: croconut/godot-tester@v3
+    - uses: actions/checkout@v3
+    - uses: ceceppa/godot-gut-ci@master
       with:
-        # required
-        version: "3.5.2"
-        # the type of release of godot that the tests should be run with
-        release_type: "stable"
-        is-mono: "true"
-        # how long to spend importing assets before tests are run
-        import-time: "15"
-        # how long tests can run in seconds
-        test-timeout: "60"
+          godot_version: 3.5.2
+          gut_params: -gdir=res://tests -gsuffix=.test.gd -gprefix=
