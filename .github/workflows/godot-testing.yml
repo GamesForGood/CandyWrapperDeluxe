@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: croconut/godot-tester@v3
+    - uses: GamesForGood/godot-tester@master
       with:
         # required
         version: "3.5.2"
