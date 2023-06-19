@@ -2,7 +2,7 @@
 
 [ext_resource path="res://addons/gut/gui/OutputText.gd" type="Script" id=1]
 
-[sub_resource type="Image" id=3]
+[sub_resource type="Image" id=12]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -11,10 +11,10 @@ data = {
 "width": 16
 }
 
-[sub_resource type="ImageTexture" id=2]
+[sub_resource type="ImageTexture" id=11]
 flags = 4
 flags = 4
-image = SubResource( 3 )
+image = SubResource( 12 )
 size = Vector2( 16, 16 )
 
 [node name="OutputText" type="VBoxContainer"]
@@ -33,7 +33,7 @@ size_flags_horizontal = 3
 margin_right = 28.0
 margin_bottom = 24.0
 toggle_mode = true
-icon = SubResource( 2 )
+icon = SubResource( 11 )
 
 [node name="UseColors" type="ToolButton" parent="Toolbar"]
 margin_left = 32.0
@@ -44,7 +44,7 @@ hint_tooltip = "Colorize output.
  but it is better than nothing."
 toggle_mode = true
 pressed = true
-icon = SubResource( 2 )
+icon = SubResource( 11 )
 
 [node name="WordWrap" type="ToolButton" parent="Toolbar"]
 margin_left = 64.0
@@ -52,7 +52,7 @@ margin_right = 92.0
 margin_bottom = 24.0
 hint_tooltip = "Word wrap"
 toggle_mode = true
-icon = SubResource( 2 )
+icon = SubResource( 11 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Toolbar"]
 margin_left = 96.0
@@ -79,6 +79,9 @@ margin_right = 862.0
 margin_bottom = 523.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_colors/member_variable_color = Color( 0.88, 0.88, 0.88, 1 )
+custom_colors/function_color = Color( 0.88, 0.88, 0.88, 1 )
+custom_colors/font_color_readonly = Color( 0.88, 0.88, 0.88, 1 )
 readonly = true
 highlight_current_line = true
 syntax_highlighting = true

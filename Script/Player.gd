@@ -57,7 +57,7 @@ func DOHUD(arg : int):
 		read.append(HUD.get_node(nNode.name))
 
 func _physics_process(delta):
-	# gravity
+	
 	vel.y += grv * delta
 	vel.y = clamp(vel.y, -termVel, termVel)
 	
@@ -100,7 +100,6 @@ func _physics_process(delta):
 	else:
 		TryLoop("Jump")
 	
-	
 	# HUD
 	#read[0].text = "onFloor: " + String(onFloor)
 	#read[1].text = "pos.x: " + String(position.x)
@@ -115,9 +114,9 @@ func Explode(arg : Vector2, explosionType):
 	NodeScene.add_child(explosionType)
 
 func Die():
-	queue_free()
-	Explode(position, PLAYER_EXPLOSION.instance())
-	global.Game.Lose()
+		queue_free()
+		Explode(position, PLAYER_EXPLOSION.instance())
+		global.Game.Lose()
 
 func Overlap():
 	var hit = false
@@ -128,6 +127,7 @@ func Overlap():
 		#print()
 		if par is global.Goober:
 			if onFloor:
+				global.lives -= 1
 				Die()
 			else:
 				if btn.pressed("jump"):
