@@ -120,7 +120,7 @@ func MapChange(delta):
 func Lose():
 	change = true
 	NodeAudioLose.play()
-	if(global.lives == 0):
+	if(global.lives == 1):
 		ModifyLives(1)
 		global.level = max(1, global.level - 1)
 	else:

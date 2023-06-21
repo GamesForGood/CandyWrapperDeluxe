@@ -1,16 +1,12 @@
 extends GutTest
 
-#var Global = load('res://Script/Global.gd')
 var Game = load('res://Script/Game.gd')
-#var _global = null;
 var _game = null;
 
 func before_each():
-	#_global = Global.new()
 	_game = Game.new()
 	
 func after_each():
-	#_global.free()
 	_game.free()
 
 #Pay atection on ModifyLives(int,action) method it takes two parameters where:
