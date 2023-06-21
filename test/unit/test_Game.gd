@@ -31,6 +31,11 @@ func test_take_life_not_below_one():
 	_global.ModifyLives(-1,"Lose")
 	assert_eq(_global.lives,1,'value should be equals')
 
+func test_take_life_not_over_three():
+	_global.lives = 3
+	_global.ModifyLives(1,"Win")
+	assert_eq(_global.lives,3,'value should be equals')
+
 #This tests was successfully done and the method should be applied on Game.gd in Lose() and Win() methods
 #Make sure you decrement lives OnFloor on Player.gd when your player die.
 #At least do forget to verify when your player lose the game how many lives he has got if it's equals to
