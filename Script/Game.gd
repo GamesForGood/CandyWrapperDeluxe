@@ -121,14 +121,14 @@ func Lose():
 	change = true
 	NodeAudioLose.play()
 	if(global.lives == 0):
-		global.ModifyLives(1, "Lose")
+		ModifyLives(1)
 		global.level = max(1, global.level - 1)
 	else:
 		global.level = max(1, global.level - 0)
 
 func Win():
 	change = true
-	global.ModifyLives(1, "Win")
+	ModifyLives(1)
 	NodeAudioWin.play()
 	global.level = min(global.lastLevel, global.level + 1)
 	print("Level Complete!, change to level: ", global.level)
@@ -136,3 +136,13 @@ func Win():
 func DoChange():
 	change = false
 	get_tree().reload_current_scene()
+
+func ModifyLives(var live):
+
+	global.lives += live
+
+	if(global.lives >= global.max_lives):
+		global.lives = global.max_lives
+
+	if(global.lives <= 1):
+		global.lives = 1

@@ -57,7 +57,7 @@ func DOHUD(arg : int):
 		read.append(HUD.get_node(nNode.name))
 
 func _physics_process(delta):
-	
+	# gravity
 	vel.y += grv * delta
 	vel.y = clamp(vel.y, -termVel, termVel)
 	
@@ -127,7 +127,7 @@ func Overlap():
 		#print()
 		if par is global.Goober:
 			if onFloor:
-				global.ModifyLives(-1,"Lose")
+				global.Game.ModifyLives(-1)
 				Die()
 			else:
 				if btn.pressed("jump"):

@@ -1,12 +1,17 @@
 extends GutTest
 
-var Global = load('res://Script/Global.gd')
-var _global = null;
+#var Global = load('res://Script/Global.gd')
+var Game = load('res://Script/Game.gd')
+#var _global = null;
+var _game = null;
+
 func before_each():
-	_global = Global.new()
+	#_global = Global.new()
+	_game = Game.new()
 	
 func after_each():
-	_global.free()
+	#_global.free()
+	_game.free()
 
 #Pay atection on ModifyLives(int,action) method it takes two parameters where:
 #First one you set how many lives would you want to increase or remove on your player
@@ -15,26 +20,26 @@ func after_each():
 
 #The way we use to increment life on the player
 func test_increment_life():
-	_global.lives = 2
-	_global.ModifyLives(1,"Win") #Would be _global.ModifyLives(1,"Lose") means the same but with diferent condition
-	assert_eq(_global.lives,3,'value should be equals')
+	global.lives = 1
+	_game.ModifyLives(1) #Would be _global.Game.ModifyLives(1) means the same but with diferent condition
+	assert_eq(global.lives,2,'value should be equals')
 
 #The way we use to decrement life on the player
 func test_decrement_life():
-	_global.lives = 3
-	_global.ModifyLives(-1,"Lose")
-	assert_eq(_global.lives,2,'value should be equals')
+	global.lives = 3
+	_game.ModifyLives(-1)
+	assert_eq(global.lives,2,'value should be equals')
 
 #The way we use to control if life is not below one and if it is we set life to one again in the player
 func test_take_life_not_below_one():
-	_global.lives = 1
-	_global.ModifyLives(-1,"Lose")
-	assert_eq(_global.lives,1,'value should be equals')
+	global.lives = 1
+	_game.ModifyLives(-1)
+	assert_eq(global.lives,1,'value should be equals')
 
 func test_take_life_not_over_three():
-	_global.lives = 3
-	_global.ModifyLives(1,"Win")
-	assert_eq(_global.lives,3,'value should be equals')
+	global.lives = 3
+	_game.ModifyLives(1)
+	assert_eq(global.lives,3,'value should be equals')
 
 #This tests was successfully done and the method should be applied on Game.gd in Lose() and Win() methods
 #Make sure you decrement lives OnFloor on Player.gd when your player die.
