@@ -46,7 +46,7 @@ func _process(delta):
 			global.level += 1
 			DoChange()
 	if global.level == 21:
-		if btn.p("ui_select"):
+		if btn.just_pressed("ui_select"):
 			global.level = 1
 			DoChange()
 	
