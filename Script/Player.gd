@@ -127,7 +127,7 @@ func Overlap():
 		#print()
 		if par is global.Goober:
 			if onFloor:
-				global.lives -= 1
+				global.ModifyLives(-1,"Lose")
 				Die()
 			else:
 				if btn.pressed("jump"):

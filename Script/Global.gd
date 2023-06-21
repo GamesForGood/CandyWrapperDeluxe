@@ -9,3 +9,13 @@ var lastLevel = 21
 
 var Main
 var Game
+
+func ModifyLives(var live, var action):
+	if(action == "Win"):
+		if(lives < max_lives):
+			lives += live
+	if(action == "Lose"):
+		lives += live
+		if(lives <= 1):
+			lives = 1
+

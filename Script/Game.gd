@@ -13,6 +13,8 @@ var NodeAudioLose
 var check = false
 var count = 0
 
+var life = 0
+
 var delay = 1.5
 var change = false
 
@@ -83,6 +85,7 @@ func MapStart():
 				add_child(plr)
 				# remove tile from map
 				NodeTileMap.set_cellv(pos, -1)
+				#set visibility off lifebar components
 				$HUD/Panel.visible = true
 				$HUD/HeartsEmpty.visible = true
 				$HUD/HeartsFull.visible = true
@@ -118,15 +121,14 @@ func Lose():
 	change = true
 	NodeAudioLose.play()
 	if(global.lives == 0):
-		global.lives += 1
+		global.ModifyLives(1, "Lose")
 		global.level = max(1, global.level - 1)
 	else:
 		global.level = max(1, global.level - 0)
 
 func Win():
 	change = true
-	if(global.lives < global.max_lives):
-		global.lives += 1
+	global.ModifyLives(1, "Win")
 	NodeAudioWin.play()
 	global.level = min(global.lastLevel, global.level + 1)
 	print("Level Complete!, change to level: ", global.level)
