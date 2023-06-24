@@ -19,3 +19,5 @@ func LoadHearts():
 	$HeartsFull.rect_size.x = global.lives * 16
 	$HeartsEmpty.rect_size.x = (global.max_lives - global.lives) * 16
 	$HeartsEmpty.rect_position.x = $HeartsFull.rect_position.x + $HeartsFull.rect_size.x * $HeartsFull.rect_scale.x
+
+
