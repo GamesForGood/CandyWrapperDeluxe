@@ -83,6 +83,11 @@ func MapStart():
 				add_child(plr)
 				# remove tile from map
 				NodeTileMap.set_cellv(pos, -1)
+				#set visibility off lifebar components
+				$HUD/Panel.visible = true
+				$HUD/HeartsEmpty.visible = true
+				$HUD/HeartsFull.visible = true
+
 			TILE_GOOBER:
 				print(pos, ": Goober")
 				var gbr = SceneGoober.instance()
@@ -114,14 +119,28 @@ func MapChange(delta):
 func Lose():
 	change = true
 	NodeAudioLose.play()
-	global.level = max(1, global.level - 1)
+	if(global.lives == 0):
+		global.level = max(1, global.level - 1)
+		ModifyLives(1)
+	else:
+		global.level = max(1, global.level - 0)
+
 
 func Win():
 	change = true
 	NodeAudioWin.play()
+	ModifyLives(1)
 	global.level = min(global.lastLevel, global.level + 1)
 	print("Level Complete!, change to level: ", global.level)
 
 func DoChange():
 	change = false
 	get_tree().reload_current_scene()
+
+func ModifyLives(var live):
+
+	global.lives += live
+
+	if(global.lives >= global.max_lives):
+		global.lives = global.max_lives
+
