@@ -22,4 +22,3 @@ margin_right = 79.0
 margin_bottom = 126.0
 custom_colors/font_color = Color( 0.454902, 0.192157, 0.00392157, 1 )
 custom_fonts/font = ExtResource( 3 )
-text = "SPACE"
