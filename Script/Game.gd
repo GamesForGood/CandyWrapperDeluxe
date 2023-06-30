@@ -84,7 +84,6 @@ func MapStart():
 				# remove tile from map
 				NodeTileMap.set_cellv(pos, -1)
 				#set visibility off lifebar components
-				$HUD/Panel.visible = true
 				$HUD/HeartsEmpty.visible = true
 				$HUD/HeartsFull.visible = true
 
@@ -134,8 +133,9 @@ func DoChange():
 	get_tree().reload_current_scene()
 
 func ModifyLevel(var level):
-	if(!global.level <= 1):
-		global.level += level
+	global.level += level
+	if(global.level < 1):
+		global.level = 1
 	if(global.level > global.lastLevel):
 		global.level = global.lastLevel
 	
