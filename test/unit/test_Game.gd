@@ -26,11 +26,11 @@ func test_decrement_life():
 	_game.ModifyLives(-1)
 	assert_eq(global.lives,2,'value should be equals')
 
-#The way we use to control if life is not below one and if it is we set life to one again in the player
-func test_take_life_not_below_one():
-	global.lives = 1
+#The way we use to control if life is not below zero and if it is we set life to zero again in the player
+func test_take_life_not_below_zero():
+	global.lives = 0
 	_game.ModifyLives(-1)
-	assert_eq(global.lives,1,'value should be equals')
+	assert_eq(global.lives,0,'value should be equals')
 
 func test_take_life_not_over_three():
 	global.lives = 3
@@ -41,3 +41,24 @@ func test_take_life_not_over_three():
 #Make sure you decrement lives OnFloor on Player.gd when your player die.
 #At least do forget to verify when your player lose the game how many lives he has got if it's equals to
 #zero take the player to previous level else keep him at the level he is.
+
+
+func test_modify_level_up():
+	global.level = 3
+	_game.ModifyLevel(1)
+	assert_eq(global.level,4,'value should be equals')
+
+func test_modify_level_down():
+	global.level = 3
+	_game.ModifyLevel(-1)
+	assert_eq(global.level,2,'value should be equals')
+
+func test_modify_level_up_boundary():
+	global.level = global.lastLevel
+	_game.ModifyLevel(1)
+	assert_eq(global.level,global.lastLevel,'value should be equals')
+
+func test_modify_level_down_boundary():
+	global.level = 1
+	_game.ModifyLevel(-11)
+	assert_eq(global.level,1,'value should be equals')
