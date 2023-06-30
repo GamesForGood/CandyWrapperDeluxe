@@ -119,28 +119,34 @@ func MapChange(delta):
 func Lose():
 	change = true
 	NodeAudioLose.play()
-	if(global.lives == 0):
-		global.level = max(1, global.level - 1)
-		ModifyLives(1)
-	else:
-		global.level = max(1, global.level - 0)
+	ModifyLives(-1)
 
 
 func Win():
 	change = true
 	NodeAudioWin.play()
 	ModifyLives(1)
-	global.level = min(global.lastLevel, global.level + 1)
+	ModifyLevel(1)
 	print("Level Complete!, change to level: ", global.level)
 
 func DoChange():
 	change = false
 	get_tree().reload_current_scene()
 
+func ModifyLevel(var level):
+	if(!global.level <= 1):
+		global.level += level
+	if(global.level > global.lastLevel):
+		global.level = global.lastLevel
+	
 func ModifyLives(var live):
-
+	print("Current lives:", global.lives)
 	global.lives += live
+	print("Lives modified:", global.lives)
 
-	if(global.lives >= global.max_lives):
+	if(global.lives > global.max_lives):
 		global.lives = global.max_lives
 
+	if(global.lives < 0):
+		ModifyLevel(-1)
+		ModifyLives(1)
