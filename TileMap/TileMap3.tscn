@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://TileMap/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Tutorial/Tutorials.tscn" type="PackedScene" id=2]
 
 [node name="TileMap" type="TileMap"]
 tile_set = ExtResource( 1 )
@@ -8,3 +9,44 @@ cell_size = Vector2( 8, 8 )
 collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, 65535, 4, 0, 18, 4, 0, 131071, 4, 0, 65554, 4, 0, 196607, 4, 0, 131090, 4, 0, 262143, 4, 0, 196626, 4, 0, 327679, 4, 0, 262162, 4, 0, 393215, 4, 0, 327698, 4, 0, 458751, 4, 0, 393220, 1, 0, 393234, 4, 0, 524287, 4, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458770, 4, 0, 589823, 4, 0, 524306, 4, 0, 655359, 4, 0, 589842, 4, 0, 720895, 4, 0, 655378, 4, 0, 786431, 4, 0, 720914, 4, 0, 851967, 4, 0, 786443, 2, 0, 786450, 4, 0, 917503, 4, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0, 851986, 4, 0, 983039, 4, 0, 917522, 4, 0, 1048575, 4, 0, 983058, 4, 0, 1114111, 4, 0, 1048594, 4, 0, 1179647, 4, 0, 1114130, 4, 0, 1245183, 4, 0, 1179648, 4, 0, 1179649, 4, 0, 1179650, 4, 0, 1179651, 4, 0, 1179652, 4, 0, 1179653, 4, 0, 1179654, 4, 0, 1179655, 4, 0, 1179656, 4, 0, 1179657, 4, 0, 1179658, 4, 0, 1179659, 4, 0, 1179660, 4, 0, 1179661, 4, 0, 1179662, 4, 0, 1179663, 4, 0, 1179664, 4, 0, 1179665, 4, 0, 1179666, 4, 0 )
+
+[node name="Tutorials" parent="." instance=ExtResource( 2 )]
+position = Vector2( 74, 95 )
+
+[node name="Title2" parent="Tutorials/TuturialNormal" index="1"]
+margin_left = 26.0
+margin_top = 103.0
+margin_right = 106.0
+margin_bottom = 120.0
+
+[node name="Left" parent="Tutorials/TuturialNormal" index="2"]
+position = Vector2( 25, 104 )
+
+[node name="Right" parent="Tutorials/TuturialNormal" index="3"]
+position = Vector2( 44, 90 )
+
+[node name="Up" parent="Tutorials/TuturialNormal" index="4"]
+position = Vector2( 43, 90 )
+
+[node name="Space" parent="Tutorials/TuturialNormal" index="6"]
+position = Vector2( 34, 101 )
+
+[node name="Title2" parent="Tutorials/ConsolasTuturial" index="1"]
+margin_left = 32.0
+margin_top = 108.0
+margin_right = 59.0
+margin_bottom = 125.0
+
+[node name="DPAD_Up" parent="Tutorials/ConsolasTuturial" index="2"]
+position = Vector2( 40, 86 )
+
+[node name="DPAD_Down" parent="Tutorials/ConsolasTuturial" index="3"]
+position = Vector2( 42, 107 )
+
+[node name="DPAD_Right" parent="Tutorials/ConsolasTuturial" index="4"]
+position = Vector2( 51, 94 )
+
+[node name="DPAD_Left" parent="Tutorials/ConsolasTuturial" index="5"]
+position = Vector2( 32, 96 )
+
+[editable path="Tutorials"]
