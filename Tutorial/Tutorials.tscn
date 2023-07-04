@@ -1,0 +1,301 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Font/m3x6.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Image/Frame 38_Left_Arow.png" type="Texture" id=2]
+[ext_resource path="res://Image/Frame 35_Up_Arrow.png" type="Texture" id=3]
+[ext_resource path="res://Image/Frame 37_Right_Arrow.png" type="Texture" id=4]
+[ext_resource path="res://Image/Frame 34_Space_Arrow.png" type="Texture" id=5]
+[ext_resource path="res://Image/Frame 54_Up_DPAD.png" type="Texture" id=6]
+[ext_resource path="res://Image/Frame 52_Down_DPAD.png" type="Texture" id=7]
+[ext_resource path="res://Image/Frame 53_Right_DPAD.png" type="Texture" id=8]
+[ext_resource path="res://Script/Tutorials.gd" type="Script" id=9]
+[ext_resource path="res://Image/Frame 51_Left_DPAD.png" type="Texture" id=10]
+[ext_resource path="res://Image/Frame 50_fly_Key.png" type="Texture" id=21]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3075, 0.235 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "zoom_in"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../Up:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.101, 0.7, 0.702 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 10 ), Vector2( 0, -15 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -15, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Space:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.205, 0.192274 ), Vector2( 0.23, 0.217 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../Right:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 15, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../fly:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.23, 0.23 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../ConsolasTuturial/DPAD_Up:offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -7.57576 ), Vector2( 0, -15 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../../ConsolasTuturial/DPAD_Down:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -7.57576 ), Vector2( 0, 5.424 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../../ConsolasTuturial/DPAD_Right:offset")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 7.5, 0 ), Vector2( 16.5, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../../ConsolasTuturial/DPAD_Left:offset")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -7.5, 0 ), Vector2( -16.5, 0 ) ]
+}
+
+[node name="Tutorials" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="TuturialNormal" type="CanvasLayer" parent="."]
+
+[node name="Title3" type="RichTextLabel" parent="TuturialNormal"]
+visible = false
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 20.0
+margin_top = 25.0
+margin_right = 110.0
+margin_bottom = 42.0
+custom_fonts/mono_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Jump on enemy to kill."
+
+[node name="Title2" type="RichTextLabel" parent="TuturialNormal"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 33.0
+margin_top = 40.0
+margin_right = 71.0
+margin_bottom = 57.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Space"
+text = "Space"
+
+[node name="Left" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 31, 41 )
+scale = Vector2( 0.3075, 0.235 )
+texture = ExtResource( 2 )
+offset = Vector2( -8.04349, 0 )
+
+[node name="Right" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 51, 27 )
+scale = Vector2( 0.3, 0.187 )
+texture = ExtResource( 4 )
+offset = Vector2( 8.04349, 0 )
+
+[node name="Up" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 49, 26 )
+scale = Vector2( 0.291974, 0.289828 )
+texture = ExtResource( 3 )
+offset = Vector2( 0, -8.12474 )
+
+[node name="fly" type="Sprite" parent="TuturialNormal"]
+visible = false
+position = Vector2( 67, 113 )
+scale = Vector2( 0.216087, 0.216087 )
+texture = ExtResource( 21 )
+offset = Vector2( 0, -7.57576 )
+
+[node name="Space" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 41, 38 )
+scale = Vector2( 0.218406, 0.205533 )
+texture = ExtResource( 5 )
+
+[node name="ConsolasTuturial" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Title3" type="RichTextLabel" parent="ConsolasTuturial"]
+visible = false
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 47.0
+margin_top = 121.0
+margin_right = 97.0
+margin_bottom = 138.0
+custom_fonts/mono_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "hit the wall."
+
+[node name="Title2" type="RichTextLabel" parent="ConsolasTuturial"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 64.0
+margin_top = 41.0
+margin_right = 91.0
+margin_bottom = 58.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Down"
+text = "Down"
+
+[node name="DPAD_Up" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 70, 19 )
+scale = Vector2( 0.18, 0.18 )
+texture = ExtResource( 6 )
+offset = Vector2( 0, -11.5569 )
+
+[node name="DPAD_Down" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 72, 39 )
+scale = Vector2( 0.18, 0.18 )
+texture = ExtResource( 7 )
+offset = Vector2( 0, -0.604864 )
+
+[node name="DPAD_Right" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 80, 27 )
+scale = Vector2( 0.18, 0.18 )
+texture = ExtResource( 8 )
+offset = Vector2( 12.3261, 0 )
+
+[node name="DPAD_Left" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 62, 29 )
+scale = Vector2( 0.18, 0.18 )
+texture = ExtResource( 10 )
+offset = Vector2( -12.3261, 0 )
+
+[node name="fly" type="Sprite" parent="ConsolasTuturial"]
+visible = false
+position = Vector2( 68, 113 )
+scale = Vector2( 0.215, 0.215 )
+texture = ExtResource( 21 )
+offset = Vector2( 0, -7.57576 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TuturialNormal/Left")
+anims/RESET = SubResource( 1 )
+anims/zoom_in = SubResource( 2 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
