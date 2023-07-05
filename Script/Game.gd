@@ -4,6 +4,8 @@ var ScenePlayer = load("res://Scene/Player.tscn")
 var SceneGoober = load("res://Scene/Goober.tscn")
 var SceneTitle = load("res://Scene/Title.tscn")
 var SceneFinish = load("res://Scene/Finish.tscn")
+var heartsFull: TextureRect
+var heartsEmpty: TextureRect
 
 var NodeTileMap
 var NodeGoobers
@@ -21,6 +23,14 @@ enum {TILE_WALL = 0, TILE_PLAYER = 1, TILE_GOOBER = 2}
 var tmpath = "res://TileMap/TileMap"
 
 func _ready():
+	#referencing the Textures
+	heartsEmpty = get_node("HUD/HeartsEmpty")
+	heartsFull = get_node("HUD/HeartsFull")
+	
+	if global.level == 0:
+		heartsEmpty.visible = false
+		heartsFull.visible = false
+	
 	global.Game = self
 	NodeGoobers = get_node("Goobers")
 	NodeAudioWin = get_node("AudioWin")
@@ -86,7 +96,7 @@ func MapStart():
 				#set visibility off lifebar components
 				$HUD/HeartsEmpty.visible = true
 				$HUD/HeartsFull.visible = true
-
+			
 			TILE_GOOBER:
 				print(pos, ": Goober")
 				var gbr = SceneGoober.instance()
@@ -95,6 +105,7 @@ func MapStart():
 				NodeGoobers.add_child(gbr)
 				# remove tile from map
 				NodeTileMap.set_cellv(pos, -1)
+			
 	print("--- MapStart: End ---")
 
 func MapChange(delta):
@@ -113,12 +124,18 @@ func MapChange(delta):
 	count = NodeGoobers.get_child_count()
 	print("Goobers: ", count)
 	if count == 0:
-		Win()
+		
+		#Prevent from going to next level in level 0
+		if global.level != 0:
+			Win()
 
 func Lose():
 	change = true
 	NodeAudioLose.play()
-	ModifyLives(-1)
+	
+	#prevent from going back substracting lives in level 0
+	if global.level != 0:
+		ModifyLives(-1)
 
 
 func Win():
