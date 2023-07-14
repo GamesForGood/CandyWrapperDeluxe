@@ -1,0 +1,325 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Font/m3x6.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Image/Arrow_Left_Key_Dark.png" type="Texture" id=2]
+[ext_resource path="res://Image/Arrow_Up_Key_Dark.png" type="Texture" id=3]
+[ext_resource path="res://Image/Arrow_Right_Key_Dark.png" type="Texture" id=4]
+[ext_resource path="res://Script/Tutorials.gd" type="Script" id=9]
+[ext_resource path="res://Image/PS5_Dpad_Left.png" type="Texture" id=15]
+[ext_resource path="res://Image/PS5_Dpad_Right.png" type="Texture" id=16]
+[ext_resource path="res://Image/PS5_Dpad_Down.png" type="Texture" id=17]
+[ext_resource path="res://Image/PS5_Dpad.png" type="Texture" id=18]
+[ext_resource path="res://Image/PS5_Dpad_Up.png" type="Texture" id=19]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.3075, 0.235 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "zoom_in"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3075, 0.235 ), Vector2( 0.4, 0.3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Right:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.33, 0.21 ), Vector2( 0.4, 0.3 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../Up:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.290369, 0.287794 ), Vector2( 0.3, 0.3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../../ConsolasTuturial/DPAD:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../../ConsolasTuturial/DPAD_Left:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../../ConsolasTuturial/DPAD_Right:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../../ConsolasTuturial/DPAD_Down:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.290369, 0.287794 ), Vector2( 0.4, 0.4 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../../ConsolasTuturial/DPAD_Up:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ) ]
+}
+
+[node name="Tutorials" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="TuturialNormal" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Title" type="RichTextLabel" parent="TuturialNormal"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 3.0
+margin_top = 8.0
+margin_right = 142.0
+margin_bottom = 25.0
+custom_fonts/mono_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Basic Instrutions to play the game"
+
+[node name="Label" type="Label" parent="TuturialNormal"]
+modulate = Color( 0.839216, 0.333333, 0, 0.752941 )
+margin_left = 71.0
+margin_top = 27.0
+margin_right = 79.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 1 )
+text = "Or"
+
+[node name="Title3" type="RichTextLabel" parent="TuturialNormal"]
+visible = false
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 20.0
+margin_top = 25.0
+margin_right = 110.0
+margin_bottom = 42.0
+custom_fonts/mono_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Jump on enemy to kill."
+
+[node name="Title2" type="RichTextLabel" parent="TuturialNormal"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 30.0
+margin_top = 39.0
+margin_right = 110.0
+margin_bottom = 56.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "use keys to move."
+text = "use keys to move."
+
+[node name="Title5" type="RichTextLabel" parent="TuturialNormal"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 30.0
+margin_top = 48.0
+margin_right = 110.0
+margin_bottom = 65.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Click enter to Skip."
+text = "Click enter to Skip."
+
+[node name="Left" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 23, 33 )
+scale = Vector2( 0.3075, 0.235 )
+texture = ExtResource( 2 )
+
+[node name="Right" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 55, 34 )
+scale = Vector2( 0.34397, 0.227961 )
+texture = ExtResource( 4 )
+
+[node name="Up" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 103, 36 )
+scale = Vector2( 0.292291, 0.29023 )
+texture = ExtResource( 3 )
+
+[node name="ConsolasTuturial" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="ConsolasTuturial"]
+modulate = Color( 0.839216, 0.333333, 0, 0.752941 )
+margin_left = 115.0
+margin_top = 39.0
+margin_right = 133.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 1 )
+text = "Right"
+
+[node name="Label2" type="Label" parent="ConsolasTuturial"]
+modulate = Color( 0.839216, 0.333333, 0, 0.752941 )
+margin_left = 12.0
+margin_top = 39.0
+margin_right = 28.0
+margin_bottom = 53.0
+custom_fonts/font = ExtResource( 1 )
+text = "Left"
+
+[node name="Title3" type="RichTextLabel" parent="ConsolasTuturial"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 26.0
+margin_top = 121.0
+margin_right = 116.0
+margin_bottom = 138.0
+custom_fonts/mono_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Jump on enemy to kill."
+
+[node name="Title2" type="RichTextLabel" parent="ConsolasTuturial"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 38.0
+margin_top = 34.0
+margin_right = 118.0
+margin_bottom = 51.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "use keys to move."
+text = "use keys to move."
+
+[node name="Title5" type="RichTextLabel" parent="ConsolasTuturial"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 24.0
+margin_top = 109.0
+margin_right = 104.0
+margin_bottom = 126.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "Press Start to Skip."
+text = "Press Start to Skip."
+
+[node name="DPAD_Down" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 124, 26 )
+scale = Vector2( 0.312249, 0.310187 )
+texture = ExtResource( 17 )
+
+[node name="DPAD_Up" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 21, 28 )
+scale = Vector2( 0.319957, 0.319957 )
+texture = ExtResource( 19 )
+
+[node name="DPAD_Left" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 21, 27 )
+scale = Vector2( 0.319957, 0.319957 )
+texture = ExtResource( 15 )
+
+[node name="DPAD_Right" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 124, 26 )
+scale = Vector2( 0.319957, 0.319957 )
+texture = ExtResource( 16 )
+
+[node name="DPAD" type="Sprite" parent="ConsolasTuturial"]
+position = Vector2( 70, 20 )
+scale = Vector2( 0.319957, 0.319957 )
+texture = ExtResource( 18 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../TuturialNormal/Left")
+anims/RESET = SubResource( 1 )
+anims/zoom_in = SubResource( 2 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
