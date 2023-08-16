@@ -14,12 +14,12 @@ func _on_joy_connection_changed(device_id: int, connected: bool):
 	if connected:
 		generalLabel.text = "START";
 	else:
-		generalLabel.text = "SPACE";
+		generalLabel.text = "ENTER";
 		
 #When the game loads, it automatically identify the Input device controller
 func identifyInputOnLoad():
 	if Input.is_joy_known(0):
 		generalLabel.text = "START";
 	else:
-		generalLabel.text = "SPACE";
+		generalLabel.text = "ENTER";
 
