@@ -13,10 +13,22 @@ tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -6
 [node name="Tutorials" parent="." instance=ExtResource( 2 )]
 position = Vector2( 80, -33 )
 
-[node name="A" parent="Tutorials/TuturialNormal" index="6"]
+[node name="left" parent="Tutorials/TuturialNormal" index="1"]
 visible = false
 
-[node name="K" parent="Tutorials/TuturialNormal" index="11"]
-visible = true
+[node name="right" parent="Tutorials/TuturialNormal" index="2"]
+visible = false
+
+[node name="up" parent="Tutorials/TuturialNormal" index="3"]
+visible = false
+
+[node name="fly" parent="Tutorials/TuturialNormal" index="7"]
+visible = false
+
+[node name="ConsolasTuturial" parent="Tutorials" index="1"]
+visible = false
+
+[node name="fly" parent="Tutorials/ConsolasTuturial" index="5"]
+visible = false
 
 [editable path="Tutorials"]

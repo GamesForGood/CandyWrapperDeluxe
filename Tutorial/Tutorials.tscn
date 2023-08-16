@@ -15,7 +15,7 @@
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("../left:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -24,43 +24,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:frame_coords")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:region_rect")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 0, 0, 0, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.3075, 0.235 ) ]
+"values": [ Vector2( 27.5, 24 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -68,16 +32,16 @@ resource_name = "zoom_in"
 length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Up:offset")
+tracks/0/path = NodePath("../up_arrow:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.101, 0.7, 0.702 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0.1, 0.101, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 10 ), Vector2( 0, -15 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -7 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:offset")
@@ -89,7 +53,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.1, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -15, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -7, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../Space:scale")
@@ -104,7 +68,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.205, 0.192274 ), Vector2( 0.23, 0.217 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../Right:offset")
+tracks/3/path = NodePath("../right_arrow:offset")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -113,7 +77,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0.1, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 15, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 7, 0 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("../fly:scale")
@@ -125,7 +89,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0.1, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.2, 0.2 ), Vector2( 0.23, 0.23 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("../../ConsolasTuturial/DPAD_Up:offset")
@@ -175,24 +139,63 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Vector2( -7.5, 0 ), Vector2( -16.5, 0 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../up:rect_position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 31, 7 ), Vector2( 31, 4 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../left:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25, 17 ), Vector2( 22, 17 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../right:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 41, 17 ), Vector2( 44, 17 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("../../ConsolasTuturial/fly:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0.1, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
+}
 
 [node name="Tutorials" type="Node2D"]
+scale = Vector2( 0.3075, 0.235 )
 script = ExtResource( 9 )
 
 [node name="TuturialNormal" type="CanvasLayer" parent="."]
 
-[node name="Title3" type="RichTextLabel" parent="TuturialNormal"]
-visible = false
-modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
-margin_left = 20.0
-margin_top = 25.0
-margin_right = 110.0
-margin_bottom = 42.0
-custom_fonts/mono_font = ExtResource( 1 )
-custom_fonts/normal_font = ExtResource( 1 )
-text = "Jump on enemy to kill."
-
 [node name="Title2" type="RichTextLabel" parent="TuturialNormal"]
+visible = false
 modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
 margin_left = 33.0
 margin_top = 40.0
@@ -203,51 +206,73 @@ bbcode_enabled = true
 bbcode_text = "Space"
 text = "Space"
 
-[node name="Left" type="Sprite" parent="TuturialNormal"]
-position = Vector2( 31, 41 )
-scale = Vector2( 0.3075, 0.235 )
+[node name="left" type="RichTextLabel" parent="TuturialNormal"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 27.5
+margin_top = 24.0
+margin_right = 43.5021
+margin_bottom = 40.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "A"
+text = "A"
+
+[node name="right" type="RichTextLabel" parent="TuturialNormal"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 41.1191
+margin_top = 17.0
+margin_right = 57.1191
+margin_bottom = 33.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "D"
+text = "D"
+
+[node name="up" type="RichTextLabel" parent="TuturialNormal"]
+modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
+margin_left = 31.0
+margin_top = 6.88092
+margin_right = 47.0
+margin_bottom = 22.8815
+rect_scale = Vector2( 2, 2 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "W"
+text = "W"
+
+[node name="left_arrow" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 29, 33 )
 texture = ExtResource( 2 )
-offset = Vector2( -8.04349, 0 )
+offset = Vector2( -0.277862, 0 )
 
-[node name="Right" type="Sprite" parent="TuturialNormal"]
-position = Vector2( 51, 27 )
-scale = Vector2( 0.3, 0.187 )
+[node name="right_arrow" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 45, 33 )
 texture = ExtResource( 4 )
-offset = Vector2( 8.04349, 0 )
+offset = Vector2( 0.277862, 0 )
 
-[node name="Up" type="Sprite" parent="TuturialNormal"]
-position = Vector2( 49, 26 )
-scale = Vector2( 0.291974, 0.289828 )
+[node name="up_arrow" type="Sprite" parent="TuturialNormal"]
+position = Vector2( 36, 25 )
 texture = ExtResource( 3 )
-offset = Vector2( 0, -8.12474 )
+offset = Vector2( 0, -0.26664 )
 
 [node name="fly" type="Sprite" parent="TuturialNormal"]
-visible = false
 position = Vector2( 67, 113 )
-scale = Vector2( 0.216087, 0.216087 )
+scale = Vector2( 1.00992, 1.00992 )
 texture = ExtResource( 21 )
 offset = Vector2( 0, -7.57576 )
 
 [node name="Space" type="Sprite" parent="TuturialNormal"]
+visible = false
 position = Vector2( 41, 38 )
-scale = Vector2( 0.218406, 0.205533 )
+scale = Vector2( 0.205992, 0.193255 )
 texture = ExtResource( 5 )
 
 [node name="ConsolasTuturial" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Title3" type="RichTextLabel" parent="ConsolasTuturial"]
-visible = false
-modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
-margin_left = 47.0
-margin_top = 121.0
-margin_right = 97.0
-margin_bottom = 138.0
-custom_fonts/mono_font = ExtResource( 1 )
-custom_fonts/normal_font = ExtResource( 1 )
-text = "hit the wall."
 
 [node name="Title2" type="RichTextLabel" parent="ConsolasTuturial"]
+visible = false
 modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
 margin_left = 64.0
 margin_top = 41.0
@@ -259,43 +284,37 @@ bbcode_text = "Down"
 text = "Down"
 
 [node name="DPAD_Up" type="Sprite" parent="ConsolasTuturial"]
-position = Vector2( 70, 19 )
-scale = Vector2( 0.18, 0.18 )
+position = Vector2( 36, 21 )
+scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 6 )
-offset = Vector2( 0, -11.5569 )
+offset = Vector2( 0, -7.87046 )
 
 [node name="DPAD_Down" type="Sprite" parent="ConsolasTuturial"]
+visible = false
 position = Vector2( 72, 39 )
 scale = Vector2( 0.18, 0.18 )
 texture = ExtResource( 7 )
-offset = Vector2( 0, -0.604864 )
+offset = Vector2( 0, -7.05974 )
 
 [node name="DPAD_Right" type="Sprite" parent="ConsolasTuturial"]
-position = Vector2( 80, 27 )
-scale = Vector2( 0.18, 0.18 )
+position = Vector2( 47, 33 )
+scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 8 )
-offset = Vector2( 12.3261, 0 )
+offset = Vector2( 7.85725, 0 )
 
 [node name="DPAD_Left" type="Sprite" parent="ConsolasTuturial"]
-position = Vector2( 62, 29 )
-scale = Vector2( 0.18, 0.18 )
+position = Vector2( 25, 33 )
+scale = Vector2( 0.35, 0.35 )
 texture = ExtResource( 10 )
-offset = Vector2( -12.3261, 0 )
+offset = Vector2( -7.85725, 0 )
 
 [node name="fly" type="Sprite" parent="ConsolasTuturial"]
-visible = false
 position = Vector2( 68, 113 )
-scale = Vector2( 0.215, 0.215 )
+scale = Vector2( 1.00992, 1.00992 )
 texture = ExtResource( 21 )
 offset = Vector2( 0, -7.57576 )
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../TuturialNormal/Left")
+root_node = NodePath("../TuturialNormal/left_arrow")
 anims/RESET = SubResource( 1 )
 anims/zoom_in = SubResource( 2 )
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

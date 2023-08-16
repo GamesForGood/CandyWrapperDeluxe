@@ -4,6 +4,7 @@
 [ext_resource path="res://Tutorial/Tutorials.tscn" type="PackedScene" id=2]
 
 [node name="TileMap" type="TileMap"]
+position = Vector2( 1, 0 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 8, 8 )
 collision_mask = 0
@@ -11,64 +12,38 @@ format = 1
 tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, 65535, 4, 0, 18, 4, 0, 131071, 4, 0, 65554, 4, 0, 196607, 4, 0, 131090, 4, 0, 262143, 4, 0, 196626, 4, 0, 327679, 4, 0, 262162, 4, 0, 393215, 4, 0, 327698, 4, 0, 458751, 4, 0, 393229, 2, 0, 393234, 4, 0, 524287, 4, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458770, 4, 0, 589823, 4, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524306, 4, 0, 655359, 4, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589842, 4, 0, 720895, 4, 0, 655378, 4, 0, 786431, 4, 0, 720914, 4, 0, 851967, 4, 0, 786436, 1, 0, 786450, 4, 0, 917503, 4, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851986, 4, 0, 983039, 4, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917522, 4, 0, 1048575, 4, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983058, 4, 0, 1114111, 4, 0, 1048594, 4, 0, 1179647, 4, 0, 1114130, 4, 0, 1245183, 4, 0, 1179648, 4, 0, 1179649, 4, 0, 1179650, 4, 0, 1179651, 4, 0, 1179652, 4, 0, 1179653, 4, 0, 1179654, 4, 0, 1179655, 4, 0, 1179656, 4, 0, 1179657, 4, 0, 1179658, 4, 0, 1179659, 4, 0, 1179660, 4, 0, 1179661, 4, 0, 1179662, 4, 0, 1179663, 4, 0, 1179664, 4, 0, 1179665, 4, 0, 1179666, 4, 0 )
 
 [node name="Tutorials" parent="." instance=ExtResource( 2 )]
-position = Vector2( -19, 72 )
 
-[node name="Title3" parent="Tutorials/TuturialNormal" index="0"]
-visible = true
-margin_left = 53.0
-margin_top = 125.0
-margin_right = 108.0
-margin_bottom = 140.0
-text = "hit the wall"
-
-[node name="Title2" parent="Tutorials/TuturialNormal" index="1"]
+[node name="left" parent="Tutorials/TuturialNormal" index="1"]
 visible = false
 
-[node name="Left" parent="Tutorials/TuturialNormal" index="2"]
+[node name="right" parent="Tutorials/TuturialNormal" index="2"]
 visible = false
 
-[node name="Right" parent="Tutorials/TuturialNormal" index="3"]
+[node name="up" parent="Tutorials/TuturialNormal" index="3"]
 visible = false
 
-[node name="Up" parent="Tutorials/TuturialNormal" index="4"]
+[node name="left_arrow" parent="Tutorials/TuturialNormal" index="4"]
 visible = false
 
-[node name="fly" parent="Tutorials/TuturialNormal" index="5"]
-visible = true
-position = Vector2( 62, 110 )
-
-[node name="Space" parent="Tutorials/TuturialNormal" index="6"]
+[node name="right_arrow" parent="Tutorials/TuturialNormal" index="5"]
 visible = false
 
-[node name="Title3" parent="Tutorials/ConsolasTuturial" index="0"]
-visible = true
-margin_left = 51.0
-margin_top = 120.0
-margin_right = 101.0
-margin_bottom = 137.0
-
-[node name="Title2" parent="Tutorials/ConsolasTuturial" index="1"]
-visible = false
-margin_left = 15.0
-margin_top = 10.0
-margin_right = 129.0
-margin_bottom = 52.0
-bbcode_text = "keep moving to teleport the player until you reach the wall."
-text = "keep moving to teleport the player until you reach the wall."
-
-[node name="DPAD_Up" parent="Tutorials/ConsolasTuturial" index="2"]
+[node name="up_arrow" parent="Tutorials/TuturialNormal" index="6"]
 visible = false
 
-[node name="DPAD_Down" parent="Tutorials/ConsolasTuturial" index="3"]
+[node name="fly" parent="Tutorials/TuturialNormal" index="7"]
+position = Vector2( 68, 127 )
+
+[node name="DPAD_Up" parent="Tutorials/ConsolasTuturial" index="1"]
 visible = false
 
-[node name="DPAD_Right" parent="Tutorials/ConsolasTuturial" index="4"]
+[node name="DPAD_Right" parent="Tutorials/ConsolasTuturial" index="3"]
 visible = false
 
-[node name="DPAD_Left" parent="Tutorials/ConsolasTuturial" index="5"]
+[node name="DPAD_Left" parent="Tutorials/ConsolasTuturial" index="4"]
 visible = false
 
-[node name="fly" parent="Tutorials/ConsolasTuturial" index="6"]
-visible = true
+[node name="fly" parent="Tutorials/ConsolasTuturial" index="5"]
+position = Vector2( 68, 127 )
 
 [editable path="Tutorials"]
