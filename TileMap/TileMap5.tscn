@@ -1,17 +1,196 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://chq7y8seugj8q"]
 
-[ext_resource path="res://TileMap/TileSet.tres" type="TileSet" id=1]
-[ext_resource path="res://Tutorial/Tutorials.tscn" type="PackedScene" id=2]
+[ext_resource type="TileSet" uid="uid://dr4c3d1ltjg3x" path="res://TileMap/TileSet.tres" id="1"]
+[ext_resource type="PackedScene" path="res://Tutorial/Tutorials.tscn" id="2"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../left:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(27.5, 24)]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "zoom_in"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../up_arrow:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.101, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-7, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Space:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.205, 0.192274), Vector2(0.23, 0.217)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../right_arrow:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(7, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../fly:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../ConsolasTuturial/DPAD_Up:offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -7.57576), Vector2(0, -15)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../ConsolasTuturial/DPAD_Down:offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -7.57576), Vector2(0, 5.424)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../ConsolasTuturial/DPAD_Right:offset")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7.5, 0), Vector2(16.5, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../ConsolasTuturial/DPAD_Left:offset")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-7.5, 0), Vector2(-16.5, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../up:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(31, 7), Vector2(31, 4)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../left:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(25, 17), Vector2(22, 17)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../right:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(41, 17), Vector2(44, 17)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../ConsolasTuturial/fly:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.25, 1.25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b17tp"]
+_data = {
+"RESET": SubResource("1"),
+"zoom_in": SubResource("2")
+}
 
 [node name="TileMap" type="TileMap"]
-position = Vector2( 1, 0 )
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 8, 8 )
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( -1, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -65533, 4, 0, -65532, 4, 0, -65531, 4, 0, -65530, 4, 0, -65529, 4, 0, -65528, 4, 0, -65527, 4, 0, -65526, 4, 0, -65525, 4, 0, -65524, 4, 0, -65523, 4, 0, -65522, 4, 0, -65521, 4, 0, -65520, 4, 0, -65519, 4, 0, -65518, 4, 0, 65535, 4, 0, 18, 4, 0, 131071, 4, 0, 65554, 4, 0, 196607, 4, 0, 131090, 4, 0, 262143, 4, 0, 196626, 4, 0, 327679, 4, 0, 262162, 4, 0, 393215, 4, 0, 327698, 4, 0, 458751, 4, 0, 393229, 2, 0, 393234, 4, 0, 524287, 4, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458770, 4, 0, 589823, 4, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524306, 4, 0, 655359, 4, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589842, 4, 0, 720895, 4, 0, 655378, 4, 0, 786431, 4, 0, 720914, 4, 0, 851967, 4, 0, 786436, 1, 0, 786450, 4, 0, 917503, 4, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851986, 4, 0, 983039, 4, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917522, 4, 0, 1048575, 4, 0, 983043, 0, 0, 983044, 0, 0, 983045, 0, 0, 983058, 4, 0, 1114111, 4, 0, 1048594, 4, 0, 1179647, 4, 0, 1114130, 4, 0, 1245183, 4, 0, 1179648, 4, 0, 1179649, 4, 0, 1179650, 4, 0, 1179651, 4, 0, 1179652, 4, 0, 1179653, 4, 0, 1179654, 4, 0, 1179655, 4, 0, 1179656, 4, 0, 1179657, 4, 0, 1179658, 4, 0, 1179659, 4, 0, 1179660, 4, 0, 1179661, 4, 0, 1179662, 4, 0, 1179663, 4, 0, 1179664, 4, 0, 1179665, 4, 0, 1179666, 4, 0 )
-
-[node name="Tutorials" parent="." instance=ExtResource( 2 )]
+position = Vector2(1, 0)
+tile_set = ExtResource("1")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 3, 0, 65535, 3, 0, 131071, 3, 0, 196607, 3, 0, 262143, 3, 0, 327679, 3, 0, 393215, 3, 0, 458751, 3, 0, 524287, 3, 0, 589823, 3, 0, 655359, 3, 0, 720895, 3, 0, 786431, 3, 0, 851967, 3, 0, 917503, 3, 0, 983039, 3, 0, 1048575, 3, 0, 1114111, 3, 0, 1179647, 3, 0, 1245183, 3, 0, -65536, 3, 0, 1179648, 3, 0, -65535, 3, 0, 1179649, 3, 0, -65534, 3, 0, 1179650, 3, 0, -65533, 3, 0, 1179651, 3, 0, -65532, 3, 0, 1179652, 3, 0, -65531, 3, 0, 1179653, 3, 0, -65530, 3, 0, 1179654, 3, 0, -65529, 3, 0, 1179655, 3, 0, -65528, 3, 0, 1179656, 3, 0, -65527, 3, 0, 1179657, 3, 0, -65526, 3, 0, 1179658, 3, 0, -65525, 3, 0, 1179659, 3, 0, -65524, 3, 0, 1179660, 3, 0, -65523, 3, 0, 1179661, 3, 0, -65522, 3, 0, 1179662, 3, 0, -65521, 3, 0, 1179663, 3, 0, -65520, 3, 0, 1179664, 3, 0, -65519, 3, 0, 1179665, 3, 0, -65518, 3, 0, 18, 3, 0, 65554, 3, 0, 131090, 3, 0, 196626, 3, 0, 262162, 3, 0, 327698, 3, 0, 393234, 3, 0, 458770, 3, 0, 524306, 3, 0, 589842, 3, 0, 655378, 3, 0, 720914, 3, 0, 786450, 3, 0, 851986, 3, 0, 917522, 3, 0, 983058, 3, 0, 1048594, 3, 0, 1114130, 3, 0, 1179666, 3, 0, 983043, 0, 0, 917508, 0, 0, 851973, 0, 0, 851971, 0, 0, 917507, 0, 0, 851972, 0, 0, 983044, 0, 0, 917509, 0, 0, 983045, 0, 0, 786436, 1, 0, 589838, 0, 0, 524302, 0, 0, 524301, 0, 0, 524300, 0, 0, 458764, 0, 0, 589836, 0, 0, 589837, 0, 0, 458765, 0, 0, 458766, 0, 0, 393229, 2, 0)
+[node name="Tutorials" parent="." instance=ExtResource("2")]
 
 [node name="left" parent="Tutorials/TuturialNormal" index="1"]
 visible = false
@@ -32,7 +211,7 @@ visible = false
 visible = false
 
 [node name="fly" parent="Tutorials/TuturialNormal" index="7"]
-position = Vector2( 68, 127 )
+position = Vector2(68, 127)
 
 [node name="DPAD_Up" parent="Tutorials/ConsolasTuturial" index="1"]
 visible = false
@@ -44,6 +223,11 @@ visible = false
 visible = false
 
 [node name="fly" parent="Tutorials/ConsolasTuturial" index="5"]
-position = Vector2( 68, 127 )
+position = Vector2(68, 127)
+
+[node name="AnimationPlayer" parent="Tutorials" index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_b17tp")
+}
 
 [editable path="Tutorials"]

@@ -16,6 +16,6 @@ func _ready():
 #	pass
 
 func LoadHUDLives():
-	$HeartsFull.rect_size.x = global.lives * 8
-	$HeartsEmpty.rect_size.x = (global.max_lives - global.lives) * 8
-	$HeartsEmpty.rect_position.x = $HeartsFull.rect_position.x + $HeartsFull.rect_size.x * $HeartsFull.rect_scale.x
+	$HeartsFull.size.x = global.lives * 8
+	$HeartsEmpty.size.x = (global.max_lives - global.lives) * 8
+	$HeartsEmpty.position.x = $HeartsFull.position.x + $HeartsFull.size.x * $HeartsFull.scale.x

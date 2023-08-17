@@ -1,8 +1,8 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 const flr = Vector2(0, -1)
 
-func wrap():
+func wrapObject():
 	if position.x < 0:
 		position.x += 144
 	elif position.x > 144:

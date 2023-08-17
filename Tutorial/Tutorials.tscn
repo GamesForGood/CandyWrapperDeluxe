@@ -1,320 +1,322 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=3 uid="uid://rw3gq6684c4r"]
 
-[ext_resource path="res://Font/m3x6.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Image/Frame 38_Left_Arow.png" type="Texture" id=2]
-[ext_resource path="res://Image/Frame 35_Up_Arrow.png" type="Texture" id=3]
-[ext_resource path="res://Image/Frame 37_Right_Arrow.png" type="Texture" id=4]
-[ext_resource path="res://Image/Frame 34_Space_Arrow.png" type="Texture" id=5]
-[ext_resource path="res://Image/Frame 54_Up_DPAD.png" type="Texture" id=6]
-[ext_resource path="res://Image/Frame 52_Down_DPAD.png" type="Texture" id=7]
-[ext_resource path="res://Image/Frame 53_Right_DPAD.png" type="Texture" id=8]
-[ext_resource path="res://Script/Tutorials.gd" type="Script" id=9]
-[ext_resource path="res://Image/Frame 51_Left_DPAD.png" type="Texture" id=10]
-[ext_resource path="res://Image/Frame 50_fly_Key.png" type="Texture" id=21]
+[ext_resource type="FontFile" path="res://Font/m3x6.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://bwjtlnn6l2gcn" path="res://Image/Frame 38_Left_Arow.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cdp3hsnucup45" path="res://Image/Frame 35_Up_Arrow.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://v5u7wahk4wci" path="res://Image/Frame 37_Right_Arrow.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dbspxxnldu06r" path="res://Image/Frame 34_Space_Arrow.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dof7t8du37ji8" path="res://Image/Frame 54_Up_DPAD.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cb4hyrn7rdtpj" path="res://Image/Frame 52_Down_DPAD.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://mxoeagryl5gq" path="res://Image/Frame 53_Right_DPAD.png" id="8"]
+[ext_resource type="Script" path="res://Script/Tutorials.gd" id="9"]
+[ext_resource type="Texture2D" uid="uid://dbldnoeprpsk5" path="res://Image/Frame 51_Left_DPAD.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bkuy7ym227tac" path="res://Image/Frame 50_fly_Key.png" id="21"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("../left:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath("../left:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Vector2( 27.5, 24 ) ]
+"values": [Vector2(27.5, 24)]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "zoom_in"
 length = 0.8
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("../up_arrow:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.101, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.101, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -7 ) ]
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, -7)]
 }
 tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( -7, 0 ) ]
+"values": [Vector2(0, 0), Vector2(-7, 0)]
 }
 tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("../Space:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0.205, 0.192274 ), Vector2( 0.23, 0.217 ) ]
+"values": [Vector2(0.205, 0.192274), Vector2(0.23, 0.217)]
 }
 tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("../right_arrow:offset")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 7, 0 ) ]
+"values": [Vector2(0, 0), Vector2(7, 0)]
 }
 tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/path = NodePath("../fly:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
+"values": [Vector2(1, 1), Vector2(1.25, 1.25)]
 }
 tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/path = NodePath("../../ConsolasTuturial/DPAD_Up:offset")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, -7.57576 ), Vector2( 0, -15 ) ]
+"values": [Vector2(0, -7.57576), Vector2(0, -15)]
 }
 tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/path = NodePath("../../ConsolasTuturial/DPAD_Down:offset")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 0, -7.57576 ), Vector2( 0, 5.424 ) ]
+"values": [Vector2(0, -7.57576), Vector2(0, 5.424)]
 }
 tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/path = NodePath("../../ConsolasTuturial/DPAD_Right:offset")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 7.5, 0 ), Vector2( 16.5, 0 ) ]
+"values": [Vector2(7.5, 0), Vector2(16.5, 0)]
 }
 tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/path = NodePath("../../ConsolasTuturial/DPAD_Left:offset")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/imported = false
-tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( -7.5, 0 ), Vector2( -16.5, 0 ) ]
+"values": [Vector2(-7.5, 0), Vector2(-16.5, 0)]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("../up:rect_position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
+tracks/9/path = NodePath("../up:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 31, 7 ), Vector2( 31, 4 ) ]
+"values": [Vector2(31, 7), Vector2(31, 4)]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("../left:rect_position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
+tracks/10/path = NodePath("../left:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 25, 17 ), Vector2( 22, 17 ) ]
+"values": [Vector2(25, 17), Vector2(22, 17)]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("../right:rect_position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
+tracks/11/path = NodePath("../right:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 41, 17 ), Vector2( 44, 17 ) ]
+"values": [Vector2(41, 17), Vector2(44, 17)]
 }
 tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("../../ConsolasTuturial/fly:scale")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0.1, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0.1, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
+"values": [Vector2(1, 1), Vector2(1.25, 1.25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aewqf"]
+_data = {
+"RESET": SubResource("1"),
+"zoom_in": SubResource("2")
 }
 
 [node name="Tutorials" type="Node2D"]
-scale = Vector2( 0.3075, 0.235 )
-script = ExtResource( 9 )
+scale = Vector2(0.3075, 0.235)
+script = ExtResource("9")
 
 [node name="TuturialNormal" type="CanvasLayer" parent="."]
 
 [node name="Title2" type="RichTextLabel" parent="TuturialNormal"]
 visible = false
-modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
-margin_left = 33.0
-margin_top = 40.0
-margin_right = 71.0
-margin_bottom = 57.0
-custom_fonts/normal_font = ExtResource( 1 )
+modulate = Color(0.796078, 0.360784, 0.141176, 0.756863)
+offset_left = 33.0
+offset_top = 40.0
+offset_right = 71.0
+offset_bottom = 57.0
+theme_override_fonts/normal_font = ExtResource("1")
 bbcode_enabled = true
-bbcode_text = "Space"
 text = "Space"
 
 [node name="left" type="RichTextLabel" parent="TuturialNormal"]
-modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
-margin_left = 27.5
-margin_top = 24.0
-margin_right = 43.5021
-margin_bottom = 40.0
-rect_scale = Vector2( 2, 2 )
-custom_fonts/normal_font = ExtResource( 1 )
+modulate = Color(0.796078, 0.360784, 0.141176, 0.756863)
+offset_left = 27.5
+offset_top = 24.0
+offset_right = 43.5021
+offset_bottom = 40.0
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("1")
 bbcode_enabled = true
-bbcode_text = "A"
 text = "A"
 
 [node name="right" type="RichTextLabel" parent="TuturialNormal"]
-modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
-margin_left = 41.1191
-margin_top = 17.0
-margin_right = 57.1191
-margin_bottom = 33.0
-rect_scale = Vector2( 2, 2 )
-custom_fonts/normal_font = ExtResource( 1 )
+modulate = Color(0.796078, 0.360784, 0.141176, 0.756863)
+offset_left = 42.6621
+offset_top = 17.0
+offset_right = 58.6621
+offset_bottom = 33.0
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("1")
 bbcode_enabled = true
-bbcode_text = "D"
 text = "D"
 
 [node name="up" type="RichTextLabel" parent="TuturialNormal"]
-modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
-margin_left = 31.0
-margin_top = 6.88092
-margin_right = 47.0
-margin_bottom = 22.8815
-rect_scale = Vector2( 2, 2 )
-custom_fonts/normal_font = ExtResource( 1 )
+modulate = Color(0.796078, 0.360784, 0.141176, 0.756863)
+offset_left = 31.0
+offset_top = 5.33791
+offset_right = 47.0
+offset_bottom = 21.3385
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("1")
 bbcode_enabled = true
-bbcode_text = "W"
 text = "W"
 
-[node name="left_arrow" type="Sprite" parent="TuturialNormal"]
-position = Vector2( 29, 33 )
-texture = ExtResource( 2 )
-offset = Vector2( -0.277862, 0 )
+[node name="left_arrow" type="Sprite2D" parent="TuturialNormal"]
+position = Vector2(29, 33)
+texture = ExtResource("2")
+offset = Vector2(-3.87821, 0)
 
-[node name="right_arrow" type="Sprite" parent="TuturialNormal"]
-position = Vector2( 45, 33 )
-texture = ExtResource( 4 )
-offset = Vector2( 0.277862, 0 )
+[node name="right_arrow" type="Sprite2D" parent="TuturialNormal"]
+position = Vector2(45, 33)
+texture = ExtResource("4")
+offset = Vector2(3.87821, 0)
 
-[node name="up_arrow" type="Sprite" parent="TuturialNormal"]
-position = Vector2( 36, 25 )
-texture = ExtResource( 3 )
-offset = Vector2( 0, -0.26664 )
+[node name="up_arrow" type="Sprite2D" parent="TuturialNormal"]
+position = Vector2(36, 25)
+texture = ExtResource("3")
+offset = Vector2(0, -3.87821)
 
-[node name="fly" type="Sprite" parent="TuturialNormal"]
-position = Vector2( 67, 113 )
-scale = Vector2( 1.00992, 1.00992 )
-texture = ExtResource( 21 )
-offset = Vector2( 0, -7.57576 )
+[node name="fly" type="Sprite2D" parent="TuturialNormal"]
+position = Vector2(67, 113)
+scale = Vector2(1.13851, 1.13851)
+texture = ExtResource("21")
+offset = Vector2(0, -7.57576)
 
-[node name="Space" type="Sprite" parent="TuturialNormal"]
+[node name="Space" type="Sprite2D" parent="TuturialNormal"]
 visible = false
-position = Vector2( 41, 38 )
-scale = Vector2( 0.205992, 0.193255 )
-texture = ExtResource( 5 )
+position = Vector2(41, 38)
+scale = Vector2(0.218851, 0.205973)
+texture = ExtResource("5")
 
 [node name="ConsolasTuturial" type="CanvasLayer" parent="."]
 
 [node name="Title2" type="RichTextLabel" parent="ConsolasTuturial"]
 visible = false
-modulate = Color( 0.796078, 0.360784, 0.141176, 0.756863 )
-margin_left = 64.0
-margin_top = 41.0
-margin_right = 91.0
-margin_bottom = 58.0
-custom_fonts/normal_font = ExtResource( 1 )
+modulate = Color(0.796078, 0.360784, 0.141176, 0.756863)
+offset_left = 64.0
+offset_top = 41.0
+offset_right = 91.0
+offset_bottom = 58.0
+theme_override_fonts/normal_font = ExtResource("1")
 bbcode_enabled = true
-bbcode_text = "Down"
 text = "Down"
 
-[node name="DPAD_Up" type="Sprite" parent="ConsolasTuturial"]
-position = Vector2( 36, 21 )
-scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 6 )
-offset = Vector2( 0, -7.87046 )
+[node name="DPAD_Up" type="Sprite2D" parent="ConsolasTuturial"]
+position = Vector2(36, 21)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6")
+offset = Vector2(0, -11.689)
 
-[node name="DPAD_Down" type="Sprite" parent="ConsolasTuturial"]
+[node name="DPAD_Down" type="Sprite2D" parent="ConsolasTuturial"]
 visible = false
-position = Vector2( 72, 39 )
-scale = Vector2( 0.18, 0.18 )
-texture = ExtResource( 7 )
-offset = Vector2( 0, -7.05974 )
+position = Vector2(72, 39)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("7")
+offset = Vector2(0, -0.373507)
 
-[node name="DPAD_Right" type="Sprite" parent="ConsolasTuturial"]
-position = Vector2( 47, 33 )
-scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 8 )
-offset = Vector2( 7.85725, 0 )
+[node name="DPAD_Right" type="Sprite2D" parent="ConsolasTuturial"]
+position = Vector2(47, 33)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8")
+offset = Vector2(12.4863, 0)
 
-[node name="DPAD_Left" type="Sprite" parent="ConsolasTuturial"]
-position = Vector2( 25, 33 )
-scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 10 )
-offset = Vector2( -7.85725, 0 )
+[node name="DPAD_Left" type="Sprite2D" parent="ConsolasTuturial"]
+position = Vector2(25, 33)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("10")
+offset = Vector2(-12.4863, 0)
 
-[node name="fly" type="Sprite" parent="ConsolasTuturial"]
-position = Vector2( 68, 113 )
-scale = Vector2( 1.00992, 1.00992 )
-texture = ExtResource( 21 )
-offset = Vector2( 0, -7.57576 )
+[node name="fly" type="Sprite2D" parent="ConsolasTuturial"]
+position = Vector2(68, 113)
+scale = Vector2(1.13851, 1.13851)
+texture = ExtResource("21")
+offset = Vector2(0, -7.57576)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../TuturialNormal/left_arrow")
-anims/RESET = SubResource( 1 )
-anims/zoom_in = SubResource( 2 )
+libraries = {
+"": SubResource("AnimationLibrary_aewqf")
+}

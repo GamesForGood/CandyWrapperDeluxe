@@ -7,7 +7,7 @@ func _ready():
 	
 	identifyInputOnLoad()
 
-	Input.connect("joy_connection_changed", self, "_on_joy_connection_changed")
+	Input.connect("joy_connection_changed", Callable(self, "_on_joy_connection_changed"))
 
 #Real time Input controller device identification
 func _on_joy_connection_changed(device_id: int, connected: bool):
