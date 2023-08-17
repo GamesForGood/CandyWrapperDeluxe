@@ -8,9 +8,9 @@ var sender = InputSender.new(Input)
 
 
 func before_each():
-	level = add_child_autofree(Level.instance())
+	level = add_child_autofree(Level.instantiate())
 	character = level.get_node("Player")
-	yield(yield_frames(1), YIELD)
+	await yield_frames(1).YIELD
 
 func after_each():
 	sender.release_all()
@@ -27,7 +27,7 @@ func test_level_loaded():
 func test_move_right():
 	var expected_result = character.position + Vector2(1, 0)
 	sender.action_down("right").wait("1f")
-	yield(sender, "idle")
+	await sender.idle
 	var result = character.position
 	assert_eq(result, expected_result, "Should move right")
 
@@ -36,7 +36,7 @@ func test_move_right():
 func test_move_left():
 	var expected_result = character.position + Vector2(-1, 0)
 	sender.action_down("left").wait("1f")
-	yield(sender, "idle")
+	await sender.idle
 	var result = character.position
 	assert_eq(result, expected_result, "Should move left")
 
@@ -44,7 +44,7 @@ func test_move_left():
 # Test if character jumps on jump key pressed
 func test_jump():
 	sender.action_down("jump").wait("1f")
-	yield(sender, "idle")
+	await sender.idle
 	assert_false(character.is_on_floor(), "Should jump and not be on floor")
 	assert_lt(character.vel.y, 0, "Should jump and not be on floor")
 
@@ -53,7 +53,7 @@ func test_jump():
 func test_jump_specific_amount_jumped():
 	var expected_result = character.position + Vector2(0, -2.287498)
 	sender.action_down("jump").wait("1f")
-	yield(sender, "idle")
+	await sender.idle
 	var result = character.position
 	assert_eq(result, expected_result, "Should jump and not be on floor")
 
@@ -61,6 +61,6 @@ func test_jump_specific_amount_jumped():
 func test_wrap_around():
 	var original_position = character.position.x
 	sender.action_down("left").wait(1.5)
-	yield(sender, "idle")
+	await sender.idle
 	var result = character.position.x
 	assert_gt(result, original_position, "Should wrap around")

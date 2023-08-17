@@ -27,9 +27,9 @@ func _ready():
 	NodeAudioLose = get_node("AudioLose")
 	
 	if global.level == 0:
-		add_child(SceneTitle.instance())
+		add_child(SceneTitle.instantiate())
 	elif global.level == 21:
-		add_child(SceneFinish.instance())
+		add_child(SceneFinish.instantiate())
 	
 	
 	MapLoad()
@@ -54,7 +54,7 @@ func _process(delta):
 
 func MapLoad():
 	var nxtlvl = min(global.level, global.lastLevel)
-	var tm = load(tmpath + String(nxtlvl) + ".tscn").instance()
+	var tm = load(tmpath + str(nxtlvl) + ".tscn").instantiate()
 	tm.name = "TileMap"
 	add_child(tm)
 	NodeTileMap = get_node("TileMap")
@@ -64,37 +64,37 @@ func MapLoad():
 func MapStart():
 	print("--- MapStart: Begin ---")
 	print("global.level: ", global.level)
-	for pos in NodeTileMap.get_used_cells():
-		match NodeTileMap.get_cellv(pos):
+	for pos in NodeTileMap.get_used_cells(0):
+		match NodeTileMap.get_cell_source_id(0,pos):
 			TILE_WALL:
 				print(pos, ": Wall")
 				var atlas = Vector2(2, 2)
-				atlas.x = rand_range(0, 3)
-				atlas.y = rand_range(0, 3)
+				atlas.x = randf_range(0, 3)
+				atlas.y = randf_range(0, 3)
 				atlas = atlas.floor()
-				NodeTileMap.set_cell(pos.x, pos.y, TILE_WALL,
-				false, false, false, atlas)
+				# NodeTileMap.set_cell(pos.x, pos.y, TILE_WALL,
+				# false, false, false, atlas)
 			TILE_PLAYER:
 				print(pos, ": Player")
-				var plr = ScenePlayer.instance()
-				plr.position = NodeTileMap.map_to_world(pos)
+				var plr = ScenePlayer.instantiate()
+				plr.position = NodeTileMap.map_to_local(pos)
 				plr.position.x += 4
 				plr.name = "Player"
 				add_child(plr)
 				# remove tile from map
-				NodeTileMap.set_cellv(pos, -1)
+				NodeTileMap.set_cell(0,pos, -1)
 				#set visibility off lifebar components
 				$HUD/HeartsEmpty.visible = true
 				$HUD/HeartsFull.visible = true
 
 			TILE_GOOBER:
 				print(pos, ": Goober")
-				var gbr = SceneGoober.instance()
-				gbr.position = NodeTileMap.map_to_world(pos)
+				var gbr = SceneGoober.instantiate()
+				gbr.position = NodeTileMap.map_to_local(pos)
 				gbr.position.x += 4
 				NodeGoobers.add_child(gbr)
 				# remove tile from map
-				NodeTileMap.set_cellv(pos, -1)
+				NodeTileMap.set_cell(0,pos, -1)
 	print("--- MapStart: End ---")
 
 func MapChange(delta):
@@ -132,14 +132,14 @@ func DoChange():
 	change = false
 	get_tree().reload_current_scene()
 
-func ModifyLevel(var level):
+func ModifyLevel(level):
 	global.level += level
 	if(global.level < 1):
 		global.level = 1
 	if(global.level > global.lastLevel):
 		global.level = global.lastLevel
 	
-func ModifyLives(var live):
+func ModifyLives(live):
 	print("Current lives:", global.lives)
 	global.lives += live
 	print("Lives modified:", global.lives)

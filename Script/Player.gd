@@ -36,7 +36,7 @@ func _ready():
 	#DOHUD(5)
 	
 	# reference nodes
-	NodeSprite = get_node("Sprite")
+	NodeSprite = get_node("Sprite2D")
 	NodeArea2D = get_node("Area2D")
 	NodeAudio = get_node("Audio")
 	NodeAnim = get_node("AnimationPlayer")
@@ -46,13 +46,13 @@ func DOHUD(arg : int):
 	HUD = NodeScene.get_node("HUD")
 	for i in range(arg):
 		var nNode = Label.new()
-		nNode.name = "Label" + String(i)
+		nNode.name = "Label" + str(i)
 		nNode.text = nNode.name
-		nNode.margin_top = (i * 7) - 4
-		nNode.margin_left = 1
+		nNode.offset_top = (i * 7) - 4
+		nNode.offset_left = 1
 		nNode.uppercase = true
-		nNode.add_color_override("font_color", Color.black)
-		nNode.add_font_override("font", fnt)
+		nNode.add_theme_color_override("font_color", Color.BLACK)
+		nNode.add_theme_font_override("font", fnt)
 		HUD.add_child(nNode, true)
 		read.append(HUD.get_node(nNode.name))
 
@@ -77,8 +77,11 @@ func _physics_process(delta):
 			vel.y = jumpSpd / -3
 	
 	# apply movement
-	var mov = move_and_slide(vel, flr)
-	wrap()
+	set_velocity(vel)
+	set_up_direction(flr)
+	move_and_slide()
+	var mov = velocity
+	wrapObject()
 	# check for Goobers
 	var hit = Overlap()
 	if !hit:
@@ -116,7 +119,7 @@ func Explode(arg : Vector2, explosionType):
 
 func Die():
 	queue_free()
-	Explode(position, PLAYER_EXPLOSION.instance())
+	Explode(position, PLAYER_EXPLOSION.instantiate())
 	global.Game.Lose()
 
 func Overlap():
@@ -137,7 +140,7 @@ func Overlap():
 					jump = false
 					vel.y = -jumpSpd * 0.6
 				par.queue_free()
-				Explode(par.position, GREEN_ENEMY_EXPLOSION.instance())
+				Explode(par.position, GREEN_ENEMY_EXPLOSION.instantiate())
 				NodeScene.check = true
 				print("Goober destroyed")
 				hit = true
