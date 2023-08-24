@@ -21,7 +21,7 @@ offset_right = 10.0
 offset_bottom = 10.0
 texture = ExtResource("6")
 expand_mode = 1
-stretch_mode = 2
+stretch_mode = 1
 
 [node name="HeartsFull" type="TextureRect" parent="HUD"]
 offset_left = 2.0
@@ -30,7 +30,7 @@ offset_right = 10.0
 offset_bottom = 10.0
 texture = ExtResource("5")
 expand_mode = 1
-stretch_mode = 2
+stretch_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(72, 72)
