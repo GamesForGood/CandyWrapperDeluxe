@@ -1,38 +1,37 @@
 extends "res://Script/BaseKine.gd"
 class_name Goober
 
-var NodeCast
-var NodeSprite
+@onready var NodeCast := $RayCast2D
+@onready var NodeSprite := $Sprite2D
 
 var spd = 30
-var vel = Vector2.ZERO
-
 
 func _ready():
-	NodeSprite = get_node("Sprite2D")
-	NodeCast = get_node("RayCast2D")
-	move_and_collide(Vector2(0, 3)) # snap to floor
-	vel = Vector2(spd, 0)
-	# change starting direction
+	move_and_collide(Vector2(0, 1)) # snap to floor
+	velocity = Vector2(spd, 0.001)
+	# # change starting direction
 	randomize()
 	if randf() > 0.5:
-		vel.x = -vel.x
+		velocity.x = -velocity.x
 		NodeSprite.flip_h = true
 
 func _physics_process(delta):
 	var cast = NodeCast.is_colliding()
 	
 	if cast == false:
-		vel.x = -vel.x
+		velocity.x = -velocity.x
 		NodeSprite.flip_h = !NodeSprite.flip_h
 	
-	set_velocity(vel)
 	move_and_slide()
+	
+	# if stuck on wall, change direction
 	var mov = velocity
 	if mov.x == 0:
-		vel.x = -vel.x
+		velocity.x = -velocity.x
 		NodeSprite.flip_h = !NodeSprite.flip_h
 	wrapObject()
+
+	
 
 
 
