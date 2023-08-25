@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dxgr8c37gq2ok"]
 
 [ext_resource type="Texture2D" uid="uid://bxfk1nhfh11ro" path="res://Image/Title.png" id="1"]
-[ext_resource type="PackedScene" path="res://Scene/TitlePlayerSprite.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dwpd4rs3ftvhr" path="res://Scene/TitlePlayerSprite.tscn" id="2"]
 [ext_resource type="FontFile" path="res://Font/m3x6.tres" id="3"]
 [ext_resource type="Script" path="res://Scene/Title.gd" id="4"]
 
