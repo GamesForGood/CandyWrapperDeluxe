@@ -4,11 +4,11 @@ class_name Goober
 @onready var NodeCast := $RayCast2D
 @onready var NodeSprite := $Sprite2D
 
-var spd = 30
+var spd = 31
 
 func _ready():
-	move_and_collide(Vector2(0, 1)) # snap to floor
-	velocity = Vector2(spd, 0.001)
+	# move_and_collide(Vector2(0, 1)) # snap to floor
+	velocity = Vector2(spd, 0)
 	# # change starting direction
 	randomize()
 	if randf() > 0.5:
