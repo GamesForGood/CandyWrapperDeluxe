@@ -19,7 +19,6 @@ config/icon="res://Image/picon.png"
 
 btn="*res://Script/btn.gd"
 global="*res://Script/Global.gd"
-Audio="*res://Script/Audio.gd"
 
 [display]
 
