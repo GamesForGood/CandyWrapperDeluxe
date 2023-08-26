@@ -13,7 +13,7 @@ var GREEN_ENEMY_EXPLOSION = load("res://Scene/ExplosionGreenEnemy.tscn")
 var HUD
 var read = []
 
-var vel = Vector2.ZERO
+
 var spd = 60
 var grv = 255
 var jumpSpd = 133
@@ -22,19 +22,10 @@ var termVel = 400
 var onFloor = false
 var jump = false
 
-var startPos
 
 func _ready():
+	velocity = Vector2.ZERO
 	NodeScene = global.Game
-	
-	# snap down 8 pixels, if floor is present
-	var vecdn = Vector2(0, 8)
-	if test_move(transform, vecdn):
-		move_and_collide(vecdn)
-	startPos = position
-	# create hud labels
-	#DOHUD(5)
-	
 	# reference nodes
 	NodeSprite = get_node("Sprite2D")
 	NodeArea2D = get_node("Area2D")
@@ -58,26 +49,25 @@ func DOHUD(arg : int):
 
 func _physics_process(delta):
 	# gravity
-	vel.y += grv * delta
-	vel.y = clamp(vel.y, -termVel, termVel)
+	velocity.y += grv * delta
+	velocity.y = clamp(velocity.y, -termVel, termVel)
 	
 	# horizontal input
 	var btnx = btn.pressed("right") - btn.pressed("left")
-	vel.x = btnx * spd
+	velocity.x = btnx * spd
 	
 	# jump
 	if onFloor:
 		if btn.just_pressed("jump"):
 			jump = true
-			vel.y = -jumpSpd
+			velocity.y = -jumpSpd
 			NodeAudio.play()
 	elif jump:
-		if !btn.pressed("jump") and vel.y < jumpSpd / -3:
+		if !btn.pressed("jump") and velocity.y < jumpSpd / -3:
 			jump = false
-			vel.y = jumpSpd / -3
+			velocity.y = jumpSpd / -3
 	
 	# apply movement
-	set_velocity(vel)
 	set_up_direction(flr)
 	move_and_slide()
 	var mov = velocity
@@ -86,7 +76,7 @@ func _physics_process(delta):
 	var hit = Overlap()
 	if !hit:
 		if mov.y == 0:
-			vel.y = 0
+			velocity.y = 0
 		# check for floor 0.1 pixel down
 		onFloor = test_move(transform, Vector2(0, 0.1))
 	
@@ -135,10 +125,10 @@ func Overlap():
 			else:
 				if btn.pressed("jump"):
 					jump = true
-					vel.y = -jumpSpd
+					velocity.y = -jumpSpd
 				else:
 					jump = false
-					vel.y = -jumpSpd * 0.6
+					velocity.y = -jumpSpd * 0.6
 				par.queue_free()
 				Explode(par.position, GREEN_ENEMY_EXPLOSION.instantiate())
 				NodeScene.check = true

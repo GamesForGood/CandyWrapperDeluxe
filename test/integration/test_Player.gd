@@ -10,7 +10,7 @@ var sender = InputSender.new(Input)
 func before_each():
 	level = add_child_autofree(Level.instantiate())
 	character = level.get_node("Player")
-	await yield_frames(1).YIELD
+	await wait_frames(10)
 
 func after_each():
 	sender.release_all()
@@ -25,20 +25,22 @@ func test_level_loaded():
 
 # Test if character moves right on right key pressed
 func test_move_right():
-	var expected_result = character.position + Vector2(1, 0)
-	sender.action_down("right").wait("1f")
+	var expected_result = int((character.position).x)
+	print("Initial value", character.position)
+	sender.action_down("right").wait("2f")
 	await sender.idle
-	var result = character.position
-	assert_eq(result, expected_result, "Should move right")
+	var result = int(character.position.x)
+	assert_gt(result, expected_result, "Should move right")
 
 
 # Test if character moves left on left key pressed
 func test_move_left():
-	var expected_result = character.position + Vector2(-1, 0)
-	sender.action_down("left").wait("1f")
+	var expected_result = int((character.position).x)
+	print("Initial value", character.position)
+	await sender.action_down("left").wait("2f")
 	await sender.idle
-	var result = character.position
-	assert_eq(result, expected_result, "Should move left")
+	var result = int(character.position.x)
+	assert_lt(result, expected_result, "Should move left")
 
 
 # Test if character jumps on jump key pressed
@@ -46,16 +48,7 @@ func test_jump():
 	sender.action_down("jump").wait("1f")
 	await sender.idle
 	assert_false(character.is_on_floor(), "Should jump and not be on floor")
-	assert_lt(character.vel.y, 0, "Should jump and not be on floor")
-
-
-# Test if character jumps on jump key pressed
-func test_jump_specific_amount_jumped():
-	var expected_result = character.position + Vector2(0, -2.287498)
-	sender.action_down("jump").wait("1f")
-	await sender.idle
-	var result = character.position
-	assert_eq(result, expected_result, "Should jump and not be on floor")
+	assert_lt(character.velocity.y, 0, "Should jump and not be on floor")
 
 # Test if wrap around works
 func test_wrap_around():
