@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://b11pvvfudux0h"]
+[gd_scene load_steps=4 format=3 uid="uid://b11pvvfudux0h"]
 
 [ext_resource type="TileSet" uid="uid://dr4c3d1ltjg3x" path="res://TileMap/TileSet.tres" id="1"]
 [ext_resource type="PackedScene" uid="uid://clj7q4l2l3cpc" path="res://Scene/Player.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bjpnsgbf34yfq" path="res://Scene/Goober.tscn" id="3_6suda"]
 
 [node name="TestIntegrationLevel2" type="Node"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1")
 format = 2
-layer_0/tile_data = PackedInt32Array(720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0)
+layer_0/tile_data = PackedInt32Array(720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 655370, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("3")]
 position = Vector2(70, 86)
+
+[node name="Goober" parent="." instance=ExtResource("3_6suda")]
+position = Vector2(118, 85)
