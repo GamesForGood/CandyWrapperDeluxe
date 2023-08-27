@@ -16,19 +16,21 @@ func _ready():
 		NodeSprite.flip_h = true
 
 func _physics_process(delta):
-	var cast = NodeCast.is_colliding()
-	
-	if cast == false:
+	# If there's no ground, rotate
+	if NodeCast.is_colliding() == false:
 		velocity.x = -velocity.x
 		NodeSprite.flip_h = !NodeSprite.flip_h
-	
+
+
+	# If there's a wall, rotate
+	if is_on_wall():
+		if(NodeSprite.flip_h):
+			velocity.x = spd
+		else:
+			velocity.x = -spd
+		NodeSprite.flip_h = !NodeSprite.flip_h
+
 	move_and_slide()
-	
-	# if stuck on wall, change direction
-	var mov = velocity
-	if mov.x == 0:
-		velocity.x = -velocity.x
-		NodeSprite.flip_h = !NodeSprite.flip_h
 	wrapObject()
 
 	
