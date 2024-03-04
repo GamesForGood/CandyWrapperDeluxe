@@ -14,7 +14,7 @@ var HUD
 var read = []
 
 
-var spd = 60
+var spd = 100
 var grv = 255
 var jumpSpd = 133
 var termVel = 400
